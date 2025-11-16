@@ -53,7 +53,7 @@ local function safeOnce(func)
     end
 end
 
--- FULL ANTI-BAN + AC BYPASS
+-- AC BYPASS
 safeOnce(function()
     local acFolders = {
         "AntiCheat", "Security", "AC", "Remotes", "PranksterComet", "SoulBuster",
@@ -97,7 +97,7 @@ safeOnce(function()
     setreadonly(mt, true)
 end)
 
--- MAX FPS UNLOCK + GC PATCH
+-- Fps Unlock And GC Patch 
 safeOnce(function()
     if setfpscap then setfpscap(targetFPS) end
 
@@ -119,7 +119,7 @@ safeOnce(function()
     end)
 end)
 
--- ULTRA RENDER OPTIMIZATION
+-- render optimization 
 safeOnce(function()
     settings().Rendering.QualityLevel = isMobile and 0 or 1
     settings().Rendering.StreamingMinRadius = isMobile and 8 or 64
@@ -135,7 +135,7 @@ safeOnce(function()
     Workspace.Terrain.Decoration = false
 end)
 
--- PARTICLES + EFFECTS KILLER
+-- Reduce Lag
 safeOnce(function()
     local function kill(v)
         if v and v.Parent then
@@ -189,7 +189,7 @@ local function hopServer()
     end)
 end
 
--- 4G + JITTER + PING FIX (OPTIMIZED)
+-- 4G optimize+ Jitter (Didn't Test)
 task.spawn(function()
     while task.wait(1) do
         if Stats.Network and Stats.Network.ServerStatsItem then
@@ -199,7 +199,7 @@ task.spawn(function()
     end
 end)
 
--- HUD + MAIN LOOP
+-- Hud + main loop (show fps amd Jitter)
 if cfg.HUD then
     local screen = Instance.new("ScreenGui")
     screen.Name = "ZEN_HUD"
